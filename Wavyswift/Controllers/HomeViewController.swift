@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, QuoteManagerDelegate {
+class HomeViewController: UIViewController {
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var wavyButton: UIButton!
 
@@ -16,19 +16,26 @@ class HomeViewController: UIViewController, QuoteManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        quoteManager.delegate = self
     }
 
     @IBAction func getQuote(_ sender: Any) {
-        quoteManager.fetchQuote()
+        quoteManager.fetchQuote { (result) in
+            switch result {
+            case .success(let quote):
+                self.setNewQuote(quote: quote)
+            case .failure(let error):
+                self.didReceiveError(error: error)
+            }
+        }
     }
 
-    func didReceiveQuote(_ manager: QuoteManager, quote: Quote) {
-        quoteLabel.text = quote.quote
+    private func setNewQuote(quote: Quote) {
+        DispatchQueue.main.async {
+            self.quoteLabel.text = quote.quote
+        }
     }
 
-    func didFailWithError(error: Error) {
+    private func didReceiveError(error: Error) {
         print(error)
     }
 }
