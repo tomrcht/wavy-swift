@@ -24,7 +24,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get a Kanye's quote" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZX-wx-yTL">
-                                <rect key="frame" x="0.0" y="431" width="414" height="34.333333333333314"/>
+                                <rect key="frame" x="30" y="431" width="354" height="34.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="25"/>
                                 <color key="textColor" name="TextColor"/>
                                 <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TI1-J3-G1E">
                                 <rect key="frame" x="0.0" y="822" width="414" height="40"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <state key="normal" title="Wavy baby 🌊"/>
+                                <state key="normal" title="🌊 Wavy baby"/>
                                 <connections>
                                     <action selector="getQuote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IDC-n3-jhU"/>
                                 </connections>
@@ -41,12 +41,12 @@
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstItem="TI1-J3-G1E" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="78d-by-lS7"/>
+                            <constraint firstItem="fZX-wx-yTL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="JjV-JG-kXL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TI1-J3-G1E" secondAttribute="trailing" id="L16-tX-Tvl"/>
-                            <constraint firstItem="fZX-wx-yTL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S4f-ce-WB2"/>
                             <constraint firstItem="fZX-wx-yTL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tdx-Op-bvf"/>
                             <constraint firstItem="TI1-J3-G1E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yzd-b7-eNX"/>
                             <constraint firstItem="6yC-Q3-f7A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZUK-og-MoJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fZX-wx-yTL" secondAttribute="trailing" id="dnZ-aW-O4o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fZX-wx-yTL" secondAttribute="trailing" constant="30" id="kOK-yH-fWf"/>
                             <constraint firstItem="fZX-wx-yTL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pFY-jX-CZA"/>
                             <constraint firstItem="6yC-Q3-f7A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOl-nq-xOT"/>
                         </constraints>
