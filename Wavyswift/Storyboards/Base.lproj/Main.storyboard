@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Wavyswift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kanye-smile" translatesAutoresizingMaskIntoConstraints="NO" id="6yC-Q3-f7A">
+                                <rect key="frame" x="107" y="44" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Le6-Wc-C4p"/>
+                                    <constraint firstAttribute="width" constant="200" id="Owy-Fs-fzD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get a Kanye's quote" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZX-wx-yTL">
+                                <rect key="frame" x="0.0" y="431" width="414" height="34.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="25"/>
+                                <color key="textColor" name="TextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TI1-J3-G1E">
+                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Wavy baby 🌊"/>
+                                <connections>
+                                    <action selector="getQuote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IDC-n3-jhU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TI1-J3-G1E" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="78d-by-lS7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TI1-J3-G1E" secondAttribute="trailing" id="L16-tX-Tvl"/>
+                            <constraint firstItem="fZX-wx-yTL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S4f-ce-WB2"/>
+                            <constraint firstItem="fZX-wx-yTL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tdx-Op-bvf"/>
+                            <constraint firstItem="TI1-J3-G1E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yzd-b7-eNX"/>
+                            <constraint firstItem="6yC-Q3-f7A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZUK-og-MoJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fZX-wx-yTL" secondAttribute="trailing" id="dnZ-aW-O4o"/>
+                            <constraint firstItem="fZX-wx-yTL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pFY-jX-CZA"/>
+                            <constraint firstItem="6yC-Q3-f7A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOl-nq-xOT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="quoteLabel" destination="fZX-wx-yTL" id="Jj3-zE-FMm"/>
+                        <outlet property="wavyButton" destination="TI1-J3-G1E" id="5D1-Ij-m0j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="kanye-smile" width="555.66668701171875" height="561"/>
+        <namedColor name="BackgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.25900000333786011" green="0.25900000333786011" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
