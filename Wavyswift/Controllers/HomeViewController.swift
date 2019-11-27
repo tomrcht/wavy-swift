@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        spinner.color = .red
+        spinner.color = UIColor(named: "TextColor")
         spinner.center = CGPoint(x: quoteLabel.frame.size.width / 2, y: quoteLabel.frame.size.height / 2)
     }
 
@@ -44,18 +44,25 @@ class HomeViewController: UIViewController {
 
     private func didReceiveError(error: Error) {
         print(error)
-        didTerminateQuery()
+
+        DispatchQueue.main.async {
+            self.didTerminateQuery()
+        }
     }
 }
 
 extension HomeViewController {
     private func prepareForQuery() {
+        wavyButton.isEnabled = false
+
         spinner.startAnimating()
         quoteLabel.text = ""
         quoteLabel.addSubview(spinner)
     }
 
     private func didTerminateQuery() {
+        wavyButton.isEnabled = true
+
         spinner.stopAnimating()
         spinner.removeFromSuperview()
     }
