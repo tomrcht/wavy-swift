@@ -53,6 +53,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="mainLogo" destination="6yC-Q3-f7A" id="tFd-0A-5L9"/>
                         <outlet property="quoteLabel" destination="fZX-wx-yTL" id="Jj3-zE-FMm"/>
                         <outlet property="wavyButton" destination="TI1-J3-G1E" id="5D1-Ij-m0j"/>
                     </connections>
