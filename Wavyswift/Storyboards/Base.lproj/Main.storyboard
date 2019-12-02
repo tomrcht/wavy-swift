@@ -29,25 +29,38 @@
                                 <color key="textColor" name="TextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TI1-J3-G1E" customClass="QueryButton" customModule="Wavyswift" customModuleProvider="target">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WZK-70-xNY">
                                 <rect key="frame" x="20" y="822" width="374" height="40"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <state key="normal" title="Wavy baby"/>
-                                <connections>
-                                    <action selector="getQuote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IDC-n3-jhU"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TI1-J3-G1E" customClass="QueryButton" customModule="Wavyswift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="40"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <state key="normal" title="Wavy baby"/>
+                                        <connections>
+                                            <action selector="getQuote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IDC-n3-jhU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiR-Bh-zvA" customClass="QueryButton" customModule="Wavyswift" customModuleProvider="target">
+                                        <rect key="frame" x="197" y="0.0" width="177" height="40"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <state key="normal" title="Settings"/>
+                                        <connections>
+                                            <segue destination="Eyh-ia-V5C" kind="presentation" identifier="settingsSegue" id="arz-Do-Byz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="TI1-J3-G1E" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="78d-by-lS7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WZK-70-xNY" secondAttribute="trailing" constant="20" id="5d8-bk-p9B"/>
                             <constraint firstItem="fZX-wx-yTL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="JjV-JG-kXL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TI1-J3-G1E" secondAttribute="trailing" constant="20" id="L16-tX-Tvl"/>
+                            <constraint firstItem="WZK-70-xNY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PDN-Vi-mq8"/>
                             <constraint firstItem="fZX-wx-yTL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tdx-Op-bvf"/>
-                            <constraint firstItem="TI1-J3-G1E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Yzd-b7-eNX"/>
                             <constraint firstItem="6yC-Q3-f7A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZUK-og-MoJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fZX-wx-yTL" secondAttribute="trailing" constant="30" id="kOK-yH-fWf"/>
                             <constraint firstItem="fZX-wx-yTL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pFY-jX-CZA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WZK-70-xNY" secondAttribute="bottom" id="wNs-Cu-K4Z"/>
                             <constraint firstItem="6yC-Q3-f7A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOl-nq-xOT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -61,6 +74,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RG3-9P-fSi">
+            <objects>
+                <viewController id="Eyh-ia-V5C" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SVk-hU-hX3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="coucou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqh-GW-vfR">
+                                <rect key="frame" x="179" y="411" width="57" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hOx-PQ-Rlf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEM-qt-VmS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="138"/>
         </scene>
     </scenes>
     <resources>
