@@ -116,13 +116,12 @@ private extension HomeViewController {
     }
 }
 
-internal extension HomeViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "settingsSegue" {
-            guard let destination = segue as? SettingsViewController else {
-                return
-            }
-            // ...
-        }
-    }
-}
+//internal extension HomeViewController {
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "settingsSegue" {
+//            guard let destination = segue.destination as? SettingsViewController else {
+//                return
+//            }
+//        }
+//    }
+//}

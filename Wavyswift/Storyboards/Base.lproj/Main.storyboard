@@ -75,23 +75,62 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="RG3-9P-fSi">
             <objects>
-                <viewController id="Eyh-ia-V5C" sceneMemberID="viewController">
+                <viewController id="Eyh-ia-V5C" customClass="SettingsViewController" customModule="Wavyswift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SVk-hU-hX3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="coucou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqh-GW-vfR">
-                                <rect key="frame" x="179" y="411" width="57" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5c5-7C-oBj">
+                                <rect key="frame" x="144" y="20" width="126.33333333333331" height="48"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="35"/>
+                                <color key="textColor" name="TextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dc-AL-i1n">
+                                <rect key="frame" x="20" y="758" width="374" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" name="PrimaryColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="Eyh-ia-V5C" eventType="touchUpInside" id="VY3-s7-v9T"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tsS-y9-Lc9">
+                                <rect key="frame" x="20" y="118" width="374" height="130"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3I-W7-mgG">
+                                        <rect key="frame" x="0.0" y="0.0" width="89" height="30"/>
+                                        <state key="normal" title="Open banner"/>
+                                        <connections>
+                                            <action selector="openBanner:" destination="Eyh-ia-V5C" eventType="touchUpInside" id="UBF-sF-hWj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLQ-ck-Daf">
+                                        <rect key="frame" x="0.0" y="50" width="30" height="30"/>
+                                        <state key="normal" title="???"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-nM-JcO">
+                                        <rect key="frame" x="0.0" y="100" width="30" height="30"/>
+                                        <state key="normal" title="???"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5c5-7C-oBj" firstAttribute="centerX" secondItem="SVk-hU-hX3" secondAttribute="centerX" id="1Cw-6H-0KT"/>
+                            <constraint firstItem="hOx-PQ-Rlf" firstAttribute="trailing" secondItem="tsS-y9-Lc9" secondAttribute="trailing" constant="20" id="1un-2G-pT8"/>
+                            <constraint firstItem="tsS-y9-Lc9" firstAttribute="top" secondItem="5c5-7C-oBj" secondAttribute="bottom" constant="50" id="AHI-FD-0WE"/>
+                            <constraint firstItem="tsS-y9-Lc9" firstAttribute="leading" secondItem="hOx-PQ-Rlf" secondAttribute="leading" constant="20" id="C7x-AD-ar5"/>
+                            <constraint firstItem="hOx-PQ-Rlf" firstAttribute="trailing" secondItem="9dc-AL-i1n" secondAttribute="trailing" constant="20" id="UiW-C1-UqI"/>
+                            <constraint firstItem="9dc-AL-i1n" firstAttribute="leading" secondItem="hOx-PQ-Rlf" secondAttribute="leading" constant="20" id="Zwe-We-zMS"/>
+                            <constraint firstItem="5c5-7C-oBj" firstAttribute="top" secondItem="hOx-PQ-Rlf" secondAttribute="top" constant="20" id="ac5-V5-o5Y"/>
+                            <constraint firstItem="9dc-AL-i1n" firstAttribute="bottom" secondItem="hOx-PQ-Rlf" secondAttribute="bottom" constant="-20" id="fQW-8i-QF9"/>
+                            <constraint firstItem="9dc-AL-i1n" firstAttribute="centerX" secondItem="SVk-hU-hX3" secondAttribute="centerX" id="tby-G9-G4E"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hOx-PQ-Rlf"/>
                     </view>
                 </viewController>
@@ -104,6 +143,9 @@
         <image name="kanye-smile" width="555.66668701171875" height="561"/>
         <namedColor name="BackgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="1" green="0.25099998712539673" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="TextColor">
             <color red="0.25900000333786011" green="0.25900000333786011" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

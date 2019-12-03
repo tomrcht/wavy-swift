@@ -16,5 +16,7 @@ class QueryButton: UIButton {
 
         setTitleColor(.white, for: .normal)
         setTitleColor(UIColor.white.withAlphaComponent(0.5), for: .disabled)
+
+        titleEdgeInsets = UIEdgeInsets(top: 5.0, left: 10.0, bottom: 5.0, right: 10.0)
     }
 }

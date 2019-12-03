@@ -9,7 +9,17 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
+    private let manager = BannerManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    @IBAction func openBanner(_ sender: Any) {
+        manager.show()
+    }
+
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
