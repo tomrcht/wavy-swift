@@ -18,6 +18,7 @@ final class Banner: UIView {
      */
     public private(set) var isShown: Bool = false
     public private(set) var variant: BannerVariant = .info
+    private var label = UILabel()
 
     /*
      * Banner frame / sizes
@@ -55,6 +56,7 @@ final class Banner: UIView {
 
         initViewStyle()
         initViewResponses()
+        initLabel()
 
         appWindow.addSubview(self)
     }
@@ -99,6 +101,23 @@ final class Banner: UIView {
         let upGesture = UISwipeGestureRecognizer(target: self, action: #selector(onSwipeUp))
         upGesture.direction = .up
         addGestureRecognizer(upGesture)
+    }
+
+    private func initLabel() -> Void {
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "coucou je suis la"
+        label.textColor = .black
+        label.layer.borderColor = UIColor.red.cgColor
+        label.layer.borderWidth = 1.0
+
+        self.addSubview(label)
+
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: self.topAnchor, constant: padding.top),
+            label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding.left),
+            label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: padding.bottom),
+//            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: padding.right),
+        ])
     }
 
     @objc private func onSwipeUp(_ sender: Any?) -> Void {
