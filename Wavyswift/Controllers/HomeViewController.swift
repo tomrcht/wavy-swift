@@ -41,16 +41,18 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func getQuote(_ sender: Any) {
-        prepareForQuery()
-
-        quoteManager.fetchQuote { (result) in
-            switch result {
-            case .success(let quote):
-                self.setNewQuote(quote: quote)
-            case .failure(let error):
-                self.didReceiveError(error: error)
-            }
-        }
+        let banner = Banner()
+        banner.show(variant: .error)
+//        prepareForQuery()
+//
+//        quoteManager.fetchQuote { (result) in
+//            switch result {
+//            case .success(let quote):
+//                self.setNewQuote(quote: quote)
+//            case .failure(let error):
+//                self.didReceiveError(error: error)
+//            }
+//        }
     }
 
     private func setNewQuote(quote: Quote) {

@@ -23,9 +23,8 @@ final class Banner: UIView {
     /*
      * Banner frame / sizes
      */
-    private let margin = UIEdgeInsets(top: 0, left: 20, bottom: 20, right: 20)
-    private let padding = UIEdgeInsets(top: 5.0, left: 10, bottom: 5.0, right: 5.0)
-    private let height: CGFloat = 50.0
+    private let margin = UIEdgeInsets(top: 0, left: 20.0, bottom: 20.0, right: 20.0)
+    private let padding = UIEdgeInsets(top: 0, left: 10.0, bottom: 0, right: 10.0)
 
     private let startingFrame: CGRect
     private let endingFrame: CGRect
@@ -47,10 +46,13 @@ final class Banner: UIView {
 
     init() {
         let bounds = appWindow.bounds
-        let safeAreaInsets = appWindow.safeAreaInsets
+        let winsowInsets = appWindow.safeAreaInsets
+
         let width = bounds.width - margin.left - margin.right
+        let height = 50.0 + padding.top + padding.bottom
+
         startingFrame = CGRect(x: bounds.minX + margin.left, y: -height, width: width, height: height)
-        endingFrame = CGRect(x: bounds.minX + margin.left, y: safeAreaInsets.top, width: width, height: height)
+        endingFrame = CGRect(x: bounds.minX + margin.left, y: winsowInsets.top, width: width, height: height)
 
         super.init(frame: .zero)
 
@@ -83,7 +85,7 @@ final class Banner: UIView {
         }
 
         appWindow.bringSubviewToFront(self)
-        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
             self.frame = self.endingFrame
         }, completion: { finished in
             self.isShown = true
@@ -105,23 +107,21 @@ final class Banner: UIView {
 
     private func initLabel() -> Void {
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "coucou je suis la"
-        label.textColor = .black
-        label.layer.borderColor = UIColor.red.cgColor
-        label.layer.borderWidth = 1.0
+        label.text = "Je suis un message dans un popup"
+        label.textColor = .white
+        label.numberOfLines = 0
 
-        self.addSubview(label)
+        addSubview(label)
 
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: self.topAnchor, constant: padding.top),
             label.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding.left),
-            label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: padding.bottom),
-//            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: padding.right),
+            label.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: padding.right),
+            label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
         ])
     }
 
     @objc private func onSwipeUp(_ sender: Any?) -> Void {
-        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
             self.frame = self.startingFrame
         }, completion: { finished in
             self.isShown = false
