@@ -65,14 +65,24 @@ final class Banner: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    public func show(variant: BannerVariant) -> Void {
-        if isShown {
-            print("Banner is already open")
-            return
-        }
+    public func show(_ message: String, variant: BannerVariant) -> Void {
+        guard !isShown else { return }
+        guard message != "" else { return }
 
+        label.text = message
         isShown = true
+        setBackgroundColor(for: variant)
 
+        appWindow?.addSubview(self)
+        appWindow?.bringSubviewToFront(self)
+        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.frame = self.endingFrame
+        }, completion: { finished in
+            self.isShown = true
+        })
+    }
+
+    private func setBackgroundColor(for variant: BannerVariant) -> Void {
         switch variant {
         case .success:
             backgroundColor = UIColor(red: 143 / 255, green: 217 / 255, blue: 136 / 255, alpha: 1)
@@ -83,14 +93,6 @@ final class Banner: UIView {
         case .info:
             backgroundColor = UIColor(named: "TextColor")
         }
-
-        appWindow?.addSubview(self)
-        appWindow?.bringSubviewToFront(self)
-        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-            self.frame = self.endingFrame
-        }, completion: { finished in
-            self.isShown = true
-        })
     }
 
     private func initViewStyle() -> Void {
@@ -108,7 +110,6 @@ final class Banner: UIView {
 
     private func initLabel() -> Void {
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Je suis un message dans un popup, je suis meme un message plutot long et c'est chiant"
         label.textColor = .white
         label.numberOfLines = 0
 
@@ -126,6 +127,7 @@ final class Banner: UIView {
             self.frame = self.startingFrame
         }, completion: { finished in
             self.isShown = false
+            self.removeFromSuperview()
         })
     }
 }
