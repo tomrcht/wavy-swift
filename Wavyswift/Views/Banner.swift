@@ -18,7 +18,7 @@ final class Banner: UIView {
      */
     public private(set) var isShown: Bool = false
     public private(set) var variant: BannerVariant = .info
-    private var label = UILabel()
+    private var label: UILabel = UILabel()
 
     /*
      * Banner frame / sizes
@@ -32,35 +32,33 @@ final class Banner: UIView {
     /*
      * Application window used to display the banner
      */
-    private let appWindow: UIWindow = {
+    private lazy var appWindow: UIWindow? = {
         if #available(iOS 13.0, *) {
             let foregroundScene = UIApplication.shared.connectedScenes
                 .filter { $0.activationState == .foregroundActive }
                 .first
             if let scene = foregroundScene as? UIWindowScene {
-                return scene.windows.first!
+                return scene.windows.first ?? UIApplication.shared.delegate?.window ?? nil
             }
         }
-        return UIApplication.shared.delegate!.window!!
+        return UIApplication.shared.delegate?.window ?? nil
     }()
 
     init() {
-        let bounds = appWindow.bounds
-        let winsowInsets = appWindow.safeAreaInsets
-
+        let bounds = UIScreen.main.bounds
         let width = bounds.width - margin.left - margin.right
         let height = 50.0 + padding.top + padding.bottom
+        let x = bounds.minX + margin.left
+        let y = -height
 
-        startingFrame = CGRect(x: bounds.minX + margin.left, y: -height, width: width, height: height)
-        endingFrame = CGRect(x: bounds.minX + margin.left, y: winsowInsets.top, width: width, height: height)
+        startingFrame = CGRect(x: x, y: y, width: width, height: height)
+        endingFrame = CGRect(x: x, y: 50.0, width: width, height: height)
 
         super.init(frame: .zero)
 
         initViewStyle()
         initViewResponses()
         initLabel()
-
-        appWindow.addSubview(self)
     }
 
     required init?(coder: NSCoder) {
@@ -73,6 +71,8 @@ final class Banner: UIView {
             return
         }
 
+        isShown = true
+
         switch variant {
         case .success:
             backgroundColor = UIColor(red: 143 / 255, green: 217 / 255, blue: 136 / 255, alpha: 1)
@@ -84,7 +84,8 @@ final class Banner: UIView {
             backgroundColor = UIColor(named: "TextColor")
         }
 
-        appWindow.bringSubviewToFront(self)
+        appWindow?.addSubview(self)
+        appWindow?.bringSubviewToFront(self)
         UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
             self.frame = self.endingFrame
         }, completion: { finished in
@@ -107,7 +108,7 @@ final class Banner: UIView {
 
     private func initLabel() -> Void {
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Je suis un message dans un popup"
+        label.text = "Je suis un message dans un popup, je suis meme un message plutot long et c'est chiant"
         label.textColor = .white
         label.numberOfLines = 0
 

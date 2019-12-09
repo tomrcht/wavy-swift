@@ -9,14 +9,14 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    private let banner = Banner()
+//    private let banner = Banner()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     @IBAction func openBanner(_ sender: Any) {
-        banner.show(variant: .error)
+//        banner.show(variant: .error)
     }
 
     @IBAction func close(_ sender: Any) {

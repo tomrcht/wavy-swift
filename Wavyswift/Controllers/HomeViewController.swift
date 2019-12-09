@@ -15,8 +15,9 @@ class HomeViewController: UIViewController {
     
     private var spinner = UIActivityIndicatorView()
     private var quoteManager = QuoteManager()
-
     private var initialLogoPosition: CGRect!
+
+    private let banner = Banner()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,6 @@ class HomeViewController: UIViewController {
     }
 
     @IBAction func getQuote(_ sender: Any) {
-        let banner = Banner()
         banner.show(variant: .error)
 //        prepareForQuery()
 //
