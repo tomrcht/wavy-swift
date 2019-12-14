@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func openBanner(_ sender: Any) {
-        banner.show("This is a test message", variant: .success)
+        banner.show("This is a test message", variant: .info)
     }
 
     @IBAction func close(_ sender: Any) {

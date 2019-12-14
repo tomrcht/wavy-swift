@@ -19,6 +19,7 @@ final class Banner: UIView {
     public private(set) var isShown: Bool = false
     public private(set) var variant: BannerVariant = .info
     private var label: UILabel = UILabel()
+    private var timeBar: UIProgressView = UIProgressView(progressViewStyle: .bar)
 
     /*
      * Banner frame / sizes
