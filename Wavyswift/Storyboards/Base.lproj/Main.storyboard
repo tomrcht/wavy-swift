@@ -108,9 +108,12 @@
                                             <action selector="openBanner:" destination="Eyh-ia-V5C" eventType="touchUpInside" id="UBF-sF-hWj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLQ-ck-Daf">
-                                        <rect key="frame" x="0.0" y="50" width="30" height="30"/>
-                                        <state key="normal" title="???"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLQ-ck-Daf">
+                                        <rect key="frame" x="0.0" y="50" width="60" height="30"/>
+                                        <state key="normal" title="Particles"/>
+                                        <connections>
+                                            <action selector="showParticles:" destination="Eyh-ia-V5C" eventType="touchUpInside" id="5JF-q9-lZK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cts-nM-JcO">
                                         <rect key="frame" x="0.0" y="100" width="30" height="30"/>
